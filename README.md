@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0208,50:8b0000,100:ff1e1e&height=220&section=header&text=PYSCH0T3A&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=%3C%20SYSTEM%20ONLINE%20%2F%2F%20UNIT%20REGISTERED%20%3E&descAlignY=58&descAlign=50" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0208,50:8b0000,100:ff1e1e&height=220&section=header&text=PYSCH0T3A&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=SYSTEM%20ONLINE%20%2F%2F%20UNIT%20REGISTERED&descAlignY=58&descAlign=50" />
 
 <br>
 
@@ -266,7 +266,7 @@ jobs:
 
 <br><br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=4000&pause=1000&color=8B0000&center=true&vCenter=true&width=600&lines=%3C+conex%C3%A3o+encerrada+%2F%2F+sistema+em+standby+%3E" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=4000&pause=1000&color=8B0000&center=true&vCenter=true&width=600&lines=conex%C3%A3o+encerrada+%2F%2F+sistema+em+standby" />
 
 <br>
 
