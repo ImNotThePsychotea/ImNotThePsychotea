@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090d">
+<meta name="description" content="Terminal interativo de v3ll0wn: desenvolvedor em formação, cibersegurança, SaaS e projetos open source.">
+<title>v3ll0wn // terminal.exe</title>
+<style>
+:root{color-scheme:dark;--bg:#09090d;--panel:#111218;--panel2:#171820;--stroke:#35313d;--text:#ebeaf0;--muted:#a2a0ae;--red:#ff426a;--dim:#9c2446;--green:#5cdb9c;--blue:#7ccaff;font-family:"JetBrains Mono","Cascadia Code","SFMono-Regular",Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-size:14px;min-height:100vh;background-image:radial-gradient(ellipse at 85% 0%,#701d342c,transparent 40%),radial-gradient(ellipse at 0% 95%,#77163220,transparent 50%)}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:hover{color:var(--red)}button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:3px}::selection{background:var(--red);color:#09090d}
+.wrap{width:min(1320px,calc(100% - 64px));margin:0 auto}.topbar{min-height:87px;border-bottom:1px solid #3b303a;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;color:var(--red);background:#ff426a10;border:1px solid #ff426a66;border-radius:8px;width:45px;height:45px;font-size:24px;font-weight:800}.brand strong{display:block;font-size:19px;letter-spacing:2px}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:4px;letter-spacing:.7px}.header-right{display:flex;align-items:center;gap:22px}.online{color:#c4c0cc;font-size:10px;letter-spacing:1px;font-weight:700}.light{display:inline-block;background:var(--green);width:7px;height:7px;margin-right:8px;border-radius:100%;box-shadow:0 0 14px var(--green)}.github-link{font-size:11px;font-weight:700;letter-spacing:1px;border:1px solid #61515d;border-radius:5px;padding:11px 16px}
+.hero{padding:72px 0 36px}.eyebrow{color:#f17b95;text-transform:uppercase;font-size:10px;letter-spacing:2px;font-weight:bold}.eyebrow:before{content:"";display:inline-block;width:26px;height:2px;background:var(--red);vertical-align:middle;margin-right:12px}.hero h1{font-size:clamp(38px,6.9vw,81px);font-weight:900;line-height:1.06;letter-spacing:-4px;margin:20px 0 18px}.hero h1 span{color:var(--red)}.cursor{animation:blink 1s steps(2,start) infinite}@keyframes blink{to{visibility:hidden}}.hero p{color:#b0adbc;max-width:740px;line-height:1.8;margin:0}.hero p strong{color:#f3d8e0}
+.layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(282px,.78fr);gap:20px;align-items:stretch}.terminal{min-width:0;height:650px;display:flex;flex-direction:column;border-radius:12px;border:1px solid #624253;background:#0e0f15;overflow:hidden;box-shadow:0 22px 65px #0008}.titlebar{height:46px;flex:none;display:flex;align-items:center;gap:14px;background:#1b1c25;border-bottom:1px solid #3b303b;padding:0 16px}.dots{display:flex;gap:7px}.dots b{width:10px;height:10px;border-radius:50%;background:#f36e7a}.dots b:nth-child(2){background:#e6b65c}.dots b:nth-child(3){background:#39cc9b}.titlebar .filename{font-size:11px;color:#d0c7d1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.titlebar .version{margin-left:auto;color:#817a88;font-size:10px}.status{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:37px;background:#14161e;border-bottom:1px solid #312d37;padding:0 16px;color:#b2a7b4;font-size:10px;letter-spacing:.6px}.status span:nth-child(2){color:#e2678d}.out{position:relative;flex:1;min-height:0;overflow:auto;padding:19px 20px 26px;scrollbar-color:#81455d transparent;scrollbar-width:thin;font-size:12px;line-height:1.72;white-space:pre-wrap;overflow-wrap:anywhere}.line{margin:0 0 8px}.line.cmd{color:#f4f0f2;margin-top:15px}.line.cmd:first-child{margin-top:0}.line.cmd .prefix{color:var(--green)}.line.ok{color:var(--green)}.line.err{color:#ff8298}.line.accent{color:var(--red);font-weight:700}.line.muted{color:#918b9f}.line.blue{color:var(--blue)}.line.ascii{color:#fd7295;font-weight:700;line-height:1.28}.line a{color:var(--blue);text-decoration:underline;text-underline-offset:4px}.line a:hover{color:var(--red)}.input-line{min-height:66px;display:flex;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid #4a333f;background:#171820}.input-line label{color:var(--green);font-size:12px;font-weight:bold;white-space:nowrap}.input-line input{min-width:0;flex:1;background:transparent;border:0;outline:none;color:white;font-size:12px;caret-color:var(--red)}.input-line input::placeholder{color:#79717d}.input-line button{background:#461b2b;color:#ffc1d0;border:1px solid #8f3455;border-radius:5px;min-width:36px;height:35px;font-size:22px}.input-line button:hover{background:var(--red);color:#120d13}.hintbar{display:flex;justify-content:space-between;gap:8px;flex:none;background:#0b0d13;border-top:1px solid #322c37;color:#9b909f;font-size:9px;padding:11px 14px}.hintbar span:last-child{color:#d28ea4}
+.sidebar{display:flex;flex-direction:column;gap:17px}.card{background:var(--panel);border:1px solid #43343f;border-radius:10px;padding:23px}.label{color:#f28fa7;font-size:10px;letter-spacing:1.7px;font-weight:700}.card h2{font-size:19px;margin:20px 0 8px;letter-spacing:-.5px}.card p{font-size:11px;line-height:1.75;color:#afa8b7;margin:0 0 18px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.buttons button{display:flex;justify-content:space-between;align-items:center;border:1px solid #433d4a;background:#1c1d27;border-radius:5px;color:#f2e9ef;font-size:12px;padding:12px 10px;text-align:left;transition:background .15s,border .15s}.buttons button span{color:var(--red)}.buttons button:hover{background:#5e2036;border-color:var(--red)}.mission{flex:1;background:linear-gradient(158deg,#230f1b,#13111a 72%)}.mission h2{font-size:37px;line-height:1.06;letter-spacing:-2px;margin:22px 0}.mission h2 span{color:var(--red)}.mission .icon{font-size:38px;color:var(--red);margin:9px 0 0}.mission button{width:100%;padding:13px 10px;border:1px solid #aa3555;background:#711e3c;color:white;font-size:11px;font-weight:bold;letter-spacing:1px}.mission button:hover{background:#bd2f57}.tip p{margin:14px 0 0}.tip code{color:#ff89a4}.footer-cards{display:flex;justify-content:space-between;gap:24px;border-top:1px solid #312d38;margin-top:32px;padding:26px 0}.footer-cards > div{min-width:0;display:flex;flex-direction:column;gap:7px}.footer-cards small{color:#8d8290;letter-spacing:1.1px;font-size:10px}.footer-cards strong,.footer-cards a{font-size:11px}.fine-print{border-top:1px solid #2b2730;color:#89818d;padding:21px 0 36px;font-size:10px;line-height:1.6}
+body.matrix{--red:#68eaa6;--dim:#26774a;--green:#b4f4c7;--blue:#89dccc;background-image:radial-gradient(ellipse at 85% 0%,#135f3626,transparent 45%)}body.matrix .mission{background:linear-gradient(158deg,#0d2a20,#11151a 72%)}body.matrix .mission button{background:#156a4a;border-color:#42ae81}
+@media(max-width:980px){.wrap{width:min(100% - 36px,780px)}.hero{padding:49px 0 28px}.hero h1{letter-spacing:-2px}.layout{grid-template-columns:1fr}.terminal{height:610px}.sidebar{display:grid;grid-template-columns:1fr 1fr;align-items:start}.tip{grid-column:span 2}.mission{height:100%}}
+@media(max-width:610px){.wrap{width:calc(100% - 24px)}.topbar{min-height:75px}.brand strong{font-size:16px}.brand small{font-size:8px}.header-right{gap:10px}.online{display:none}.github-link{font-size:10px;padding:10px}.hero{padding:39px 0 27px}.hero h1{font-size:clamp(32px,9vw,51px);letter-spacing:-1.7px}.eyebrow{font-size:9px;letter-spacing:1px}.terminal{height:560px}.status span:nth-child(2){display:none}.out{padding:14px;font-size:11px}.input-line{gap:6px;padding:10px}.input-line label,.input-line input{font-size:11px}.hintbar{font-size:8px}.hintbar span:last-child{display:none}.sidebar{display:flex}.mission h2{font-size:29px}.footer-cards{flex-wrap:wrap;gap:16px}.footer-cards > div{width:44%}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+ <a class="brand" href="https://github.com/v3ll0wn" target="_blank" rel="noopener noreferrer"><span class="logo">&gt;_</span><span><strong>v3ll0wn</strong><small>// personal interface</small></span></a>
+ <nav class="header-right" aria-label="Atalhos"><span class="online"><i class="light"></i>SYSTEM ONLINE</span><a class="github-link" href="https://github.com/v3ll0wn" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></nav>
+</header>
+<main>
+<section class="hero"><div class="eyebrow">PORTFÓLIO // INTERFACE DE COMANDOS 01</div><h1>ENTRE NO <span>TERMINAL<span class="cursor">_</span></span></h1><p>Desenvolvimento de Sistemas, projetos SaaS e estudos de cibersegurança. Nada de portfólio genérico: <strong>explore digitando comandos de verdade nesta interface.</strong></p></section>
+<div class="layout">
+<section class="terminal" aria-label="Terminal interativo">
+ <div class="titlebar"><div class="dots" aria-hidden="true"><b></b><b></b><b></b></div><span class="filename">v3ll0wn@localhost: ~ — terminal.exe</span><span class="version">v1.0.0</span></div>
+ <div class="status"><span><i class="light"></i> LOCAL SESSION</span><span>SIMULADOR DE COMANDOS</span><span id="clock">--:--:--</span></div>
+ <div class="out" id="output" role="log" aria-live="polite" aria-relevant="additions" aria-label="Saída do terminal"></div>
+ <form id="command-form" class="input-line" autocomplete="off">
+  <label for="command-input">guest@v3ll0wn:~$</label><input id="command-input" type="text" aria-label="Comando do terminal" placeholder="digite help para começar..." maxlength="200" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
+  <button type="submit" title="Executar comando" aria-label="Executar comando">↵</button>
+ </form>
+ <div class="hintbar"><span>↑ ↓ histórico · TAB autocomplete · Ctrl+L limpar</span><span>SAFE • NO DEVICE ACCESS</span></div>
+</section>
+<aside class="sidebar" aria-label="Painel de comandos">
+ <div class="card"><div class="label">01 / QUICK EXEC</div><h2>Comandos rápidos</h2><p>Clique para executar ou escreva no terminal.</p><div class="buttons">
+  <button type="button" data-command="help">help <span>↗</span></button>
+  <button type="button" data-command="whoami">whoami <span>↗</span></button>
+  <button type="button" data-command="projects">projects <span>↗</span></button>
+  <button type="button" data-command="skills">skills <span>↗</span></button>
+  <button type="button" data-command="security">security <span>↗</span></button>
+  <button type="button" data-command="neofetch">neofetch <span>↗</span></button>
+ </div></div>
+ <div class="card mission"><div class="label">02 / CURRENT MISSION</div><div class="icon">⌘</div><h2>BUILD.<br>BREAK.<br><span>LEARN.</span><br>SECURE.</h2><p>Desenvolvimento web, automações e aprendizado responsável em segurança.</p><button type="button" data-command="roadmap">EXPLORAR ROADMAP →</button></div>
+ <div class="card tip"><div class="label">03 / HIDDEN COMMANDS</div><p>✳ Existem comandos especiais. Comece digitando <code>help</code> e explore os easter eggs.</p></div>
+</aside>
+</div>
+<div class="footer-cards"><div><small>SYSTEM</small><strong>v3ll0wn OS / PORTFOLIO</strong></div><div><small>SOURCE</small><a href="https://github.com/v3ll0wn/v3ll0wn/tree/main/docs" target="_blank" rel="noopener noreferrer">OPEN SOURCE ↗</a></div><div><small>PRIVACY</small><strong>LOCAL / SEM TRACKING</strong></div></div>
+</main>
+<footer class="fine-print">© <span id="year"></span> v3ll0wn. Simulador de terminal: executa apenas comandos internos da página; não acessa arquivos do visitante, não solicita senhas e não executa comandos do sistema operacional.</footer>
+</div>
+<script>
+(function () {
+ "use strict";
+ const input = document.getElementById("command-input");
+ const output = document.getElementById("output");
+ const form = document.getElementById("command-form");
+ const clock = document.getElementById("clock");
+ const history = [];
+ let index = 0;
+ const projects = {
+   flowwhats: {label:"FlowWhats — SaaS de automação para WhatsApp",url:"https://github.com/v3ll0wn/FlowWhats"},
+   synergi: {label:"Synergi AI — plataforma de aprendizado em IA",url:"https://github.com/v3ll0wn/learn-ia-quest"},
+   synthlearn: {label:"SynthLearn — experimentos de desenvolvimento web",url:"https://github.com/v3ll0wn/SynthLearn"}
+ };
+ const commands = ["help","whoami","about","projects","skills","security","roadmap","neofetch","socials","contact","ls","pwd","cat","open","date","history","echo","theme","clear","cls","sudo","hack","matrix","exit"];
+ function line(text, cls, url) {
+   const div = document.createElement("div");
+   div.className = "line" + (cls ? " " + cls : "");
+   if (url) {
+     const link = document.createElement("a");
+     link.href = url; link.target = "_blank"; link.rel = "noopener noreferrer";
+     link.textContent = text; div.appendChild(link);
+   } else { div.textContent = text; }
+   output.appendChild(div);
+   output.scrollTop = output.scrollHeight;
+   return div;
+ }
+ function say(lines, cls) {
+   if (Array.isArray(lines)) {lines.forEach(function(s){line(s,cls);});}
+   else {line(lines,cls);}
+ }
+ function echoCommand(value) {
+   const d = line("guest@v3ll0wn:~$ " + value, "cmd");
+   d.setAttribute("aria-label", "Comando executado: " + value);
+ }
+ function projectList() {
+   say("  [01] FLOWWHATS   — SaaS / Automação / TypeScript", "ok");
+   say("  [02] SYNERGI     — Educação em IA / React", "ok");
+   say("  [03] SYNTHLEARN — Experimentos Web / JavaScript", "ok");
+   say("Use: open flowwhats | open synergi | open synthlearn", "muted");
+ }
+ function run(raw) {
+   const value = raw.trim();
+   if (!value) return;
+   history.push(value); index = history.length;
+   const parts = value.split(/\s+/); const cmd = parts[0].toLowerCase(); const arg = parts.slice(1).join(" ");
+   if (cmd === "clear" || cmd === "cls") {output.replaceChildren(); return;}
+   echoCommand(value);
+   switch (cmd) {
+     case "help":
+       say("╭─ COMANDOS DISPONÍVEIS ────────────────────────────╮", "accent");
+       say("  whoami / about   Informações sobre v3ll0wn");
+       say("  projects         Lista de projetos públicos");
+       say("  skills           Tecnologias e stack");
+       say("  security         Trilha de cibersegurança");
+       say("  roadmap          Próximos objetivos");
+       say("  neofetch         Resumo visual do perfil");
+       say("  open <projeto>   Abrir um projeto no GitHub");
+       say("  socials/contact  Como entrar em contato");
+       say("  ls, pwd, cat     Navegação simulada");
+       say("  date, history    Relógio e histórico");
+       say("  theme red|matrix Alterar cor do terminal");
+       say("  clear            Limpar tela");
+       say("╰───────────────────────────────────────────────────╯", "accent");
+       say("Dica: use ↑ ↓ para histórico, TAB para completar comandos.", "muted");
+       break;
+     case "whoami": case "about":
+       say("v3ll0wn // Desenvolvedor de Sistemas em formação", "ok");
+       say("São Paulo, Brasil");
+       say("Interesses: SaaS, React, TypeScript, Python, Linux e AppSec");
+       say("Objetivo: criar aplicações e estudar segurança com ética.");
+       say("Status: aprendendo, construindo e aprimorando.", "muted");
+       break;
+     case "projects":
+       say("~/projects — repositórios públicos selecionados", "accent");projectList();break;
+     case "skills":
+       say("STACK ATUAL / ESTUDOS", "accent");
+       say("Linguagens:       JavaScript | TypeScript | Python | HTML | CSS");
+       say("Web:              React | Vite | Next.js | Tailwind");
+       say("Backend:          Node.js | Express | NestJS (estudo)");
+       say("Dados:            PostgreSQL | Supabase | Prisma");
+       say("Ferramentas:      Git | GitHub | VS Code | Linux");
+       say("Interesses:       Redes | Autenticação | Segurança web");
+       say("Nota: tecnologias usadas ou estudadas, sem afirmar domínio avançado.", "muted");break;
+     case "security":
+       say("[ MODO APRENDIZADO EM SEGURANÇA ]", "accent");
+       say("[+] Fundamentos de Linux e redes", "ok");
+       say("[+] Segurança em aplicações web e APIs", "ok");
+       say("[+] Autenticação, autorização e boas práticas", "ok");
+       say("[+] Prática apenas em sistemas próprios/autorizados", "ok");
+       say("Objetivo: ethical hacking e desenvolvimento seguro.", "muted");break;
+     case "roadmap":
+       say("ROADMAP :: EVOLUÇÃO CONTÍNUA", "accent");
+       say("[x] Projetos web com HTML, CSS, JavaScript");
+       say("[x] Aplicações com TypeScript e React");
+       say("[x] Explorar SaaS, APIs e banco de dados");
+       say("[ ] Aprofundar Linux, redes, AppSec e OWASP Top 10");
+       say("[ ] Testes automatizados, CI e qualidade de código");
+       say("[ ] Labs autorizados e projetos open source");
+       say("[ ] Documentar estudos e obter certificações");
+       break;
+     case "neofetch":
+       say([
+         "                _  _  _                  ",
+         "  ██╗   ██╗   | || || |   v3ll0wn@github",
+         "  ██║   ██║   | || || |   ─────────────────────────",
+         "  ╚██╗ ██╔╝   |__   __|   OS: Personal Portfolio",
+         "   ╚████╔╝       | |      Role: Dev em formação",
+         "    ╚██╔╝        |_|      Focus: SaaS + Security",
+         "     ╚═╝                  Shell: portfolio-sh",
+         "                          Region: São Paulo / BR",
+         "                          Motto: build // learn"
+       ], "ascii");break;
+     case "socials": case "contact":
+       say("GITHUB: https://github.com/v3ll0wn", "blue");
+       line("↗ Abrir GitHub / repositórios","blue","https://github.com/v3ll0wn");
+       say("Para projetos específicos, use Issues quando estiverem habilitadas.","muted");
+       break;
+     case "pwd": say("/home/v3ll0wn");break;
+     case "ls": say("README.md  projects/  skills.txt  security.txt  roadmap.txt", "ok");break;
+     case "cat":
+       if (!arg) {say("cat: informe um arquivo. Use 'ls' para listar.", "err");break;}
+       if (arg === "README.md" || arg === "readme.md") runInternal("whoami");
+       else if (arg === "skills.txt") runInternal("skills");
+       else if (arg === "security.txt") runInternal("security");
+       else if (arg === "roadmap.txt") runInternal("roadmap");
+       else say("cat: " + arg + ": arquivo não encontrado.", "err");
+       break;
+     case "open": {
+       const target = arg.toLowerCase().replace(/[\s_-]+/g,"");
+       const selected = projects[target];
+       if (!selected) {say("Use: open flowwhats | open synergi | open synthlearn", "err");break;}
+       line("↗ " + selected.label, "blue", selected.url);
+       const win = window.open(selected.url, "_blank", "noopener,noreferrer");
+       if (!win) say("Se o navegador bloquear a nova aba, clique no link acima.", "muted");
+       break;
+     }
+     case "date": say(new Date().toLocaleString("pt-BR", {dateStyle:"full",timeStyle:"medium"}));break;
+     case "history":
+       if (!history.length) say("Nenhum comando anterior.", "muted");
+       else history.slice(-16).forEach(function(v,i){say(" " + String(Math.max(1,history.length-15)+i).padStart(3,"0") + "  " + v);});
+       break;
+     case "echo": say(arg);break;
+     case "theme":
+       if (arg === "matrix" || arg === "green") {document.body.classList.add("matrix");say("[OK] tema: MATRIX GREEN", "ok");}
+       else if (arg === "red" || arg === "crimson") {document.body.classList.remove("matrix");say("[OK] tema: CRIMSON RED", "ok");}
+       else say("Use: theme red | theme matrix", "muted");
+       break;
+     case "matrix":
+       document.body.classList.add("matrix");say("Wake up, v3ll0wn. Follow the white rabbit.", "ok");break;
+     case "sudo":
+       say("[SIMULADOR] root não é necessário para explorar este portfólio.", "accent");
+       say("Nenhuma operação administrativa é executada.", "muted");break;
+     case "hack":
+       say("ACCESS DENIED: curiosidade != autorização.", "err");
+       say("Para estudar segurança, use ambientes próprios e laboratórios autorizados.", "muted");break;
+     case "exit":
+       say("Session closed. Ainda curioso? digite help.", "muted");break;
+     default:
+       say("Comando não encontrado: " + cmd, "err");
+       say("Digite 'help' para consultar os comandos disponíveis.", "muted");
+   }
+ }
+ function runInternal(command) {
+   const oldLen = history.length;
+   run(command);
+   history.splice(oldLen);
+   index = history.length;
+ }
+ form.addEventListener("submit",function(event){event.preventDefault();const v=input.value;input.value="";run(v);input.focus();});
+ input.addEventListener("keydown",function(event){
+   if(event.key==="ArrowUp"){event.preventDefault();if(index>0)index--;input.value=history[index]||"";}
+   else if(event.key==="ArrowDown"){event.preventDefault();if(index<history.length)index++;input.value=history[index]||"";}
+   else if(event.key==="Tab"){
+     event.preventDefault();
+     const val=input.value.trim().toLowerCase();
+     const pool = val.startsWith("open ") ? Object.keys(projects).map(function(k){return "open "+k;}) : commands;
+     const options=pool.filter(function(c){return c.startsWith(val);});
+     if(options.length===1)input.value=options[0]+" ";
+     else if(options.length>1)line("⇢ "+options.join("   "),"muted");
+   }
+   else if(event.key.toLowerCase()==="l" && event.ctrlKey){event.preventDefault();output.replaceChildren();}
+ });
+ document.querySelectorAll("[data-command]").forEach(function(b){
+   b.addEventListener("click",function(){run(b.getAttribute("data-command"));input.focus();});
+ });
+ document.querySelector(".terminal").addEventListener("click",function(ev){
+   if(ev.target.tagName!=="A" && ev.target.tagName!=="BUTTON" && window.getSelection().toString()==="") input.focus();
+ });
+ function tick(){clock.textContent=new Date().toLocaleTimeString("pt-BR");}
+ tick();setInterval(tick,1000);document.getElementById("year").textContent=new Date().getFullYear();
+ say("v3ll0wn OS [version 1.0.0]", "accent");
+ say("Copyright (c) v3ll0wn. Interface local e segura.", "muted");
+ say("");
+ say(" ▌█▀▀▀ █▀▀▀ █   █   █▀▀▀ █ █   █   █▀▀▀ ▌", "ascii");
+ say(" ▌█ ▄▄ █▀▀  █   █   █   █ █ █ █ █   █ █ ▌", "ascii");
+ say(" ▌▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀  ▀  ▀  ▀   ▀▀▀▀ ▌", "ascii");
+ say("");
+ say("[+] BOOT COMPLETO. Bem-vindo ao terminal de v3ll0wn!", "ok");
+ say("[i] Digite help ou clique em um comando rápido.", "muted");
+})();
+</script>
+</body>
+</html>
