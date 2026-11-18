@@ -187,8 +187,8 @@ body.matrix{--red:#68eaa6;--dim:#26774a;--green:#b4f4c7;--blue:#89dccc;backgroun
        const selected = projects[target];
        if (!selected) {say("Use: open flowwhats | open synergi | open synthlearn", "err");break;}
        line("↗ " + selected.label, "blue", selected.url);
-       const win = window.open(selected.url, "_blank", "noopener,noreferrer");
-       if (!win) say("Se o navegador bloquear a nova aba, clique no link acima.", "muted");
+       window.open(selected.url, "_blank", "noopener,noreferrer");
+       say("Se a nova aba não abrir, clique no link acima.", "muted");
        break;
      }
      case "date": say(new Date().toLocaleString("pt-BR", {dateStyle:"full",timeStyle:"medium"}));break;
