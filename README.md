@@ -39,9 +39,11 @@
 
 ### 🧭 CENTRAL DE NAVEGAÇÃO
 
-[**INÍCIO**](#-sobre-mim) · [**TERMINAL**](#-terminal-interativo) · [**STACK**](#-arsenal-tecnico) · [**PROJETOS**](#-projetos-em-destaque) · [**SEGURANÇA**](#-laboratorio-de-seguranca) · [**GITHUB**](#-telemetria-do-github) · [**ROADMAP**](#-roadmap-pessoal) · [**CONTATO**](#-conexao)
+[**INÍCIO**](#inicio) · [**TERMINAL**](#terminal) · [**STACK**](#stack) · [**PROJETOS**](#projetos) · [**SEGURANÇA**](#seguranca) · [**GITHUB**](#github) · [**ROADMAP**](#roadmap) · [**CONTATO**](#contato)
 
 </div>
+
+<a name="inicio"></a>
 
 ## 👾 Sobre mim
 
@@ -68,6 +70,8 @@ Sou um estudante de **Desenvolvimento de Sistemas** que gosta de ir além de uma
 - **Estilo:** aprender na prática, testar, errar, documentar, melhorar e repetir.
 
 > **Nota de transparência:** sou um desenvolvedor em formação. Ferramentas citadas no meu roadmap representam estudos e interesses, não certificações ou experiência profissional comprovada.
+
+<a name="terminal"></a>
 
 ## 🖥️ Terminal interativo
 
@@ -159,6 +163,8 @@ Access granted.
 
 ---
 
+<a name="stack"></a>
+
 ## 🧰 Arsenal técnico
 
 <div align="center">
@@ -217,6 +223,8 @@ Access granted.
 </details>
 
 ---
+
+<a name="projetos"></a>
 
 ## 🚀 Projetos em destaque
 
@@ -304,6 +312,8 @@ Nem todo experimento é um produto final. Alguns são apenas etapas de estudo.
 
 ---
 
+<a name="seguranca"></a>
+
 ## 🔐 Laboratório de segurança
 
 <div align="center">
@@ -389,6 +399,8 @@ flowchart TD
 
 ---
 
+<a name="github"></a>
+
 ## 📈 Telemetria do GitHub
 
 <div align="center">
@@ -438,6 +450,8 @@ Esses números são dados dinâmicos de terceiros e podem sofrer atrasos ou limi
 
 ---
 
+<a name="roadmap"></a>
+
 ## 🎯 Roadmap pessoal
 
 > Desenvolvimento é prática constante. Estas são metas de estudo, não uma lista de qualificações já conquistadas.
@@ -486,6 +500,8 @@ learn     → registrar o que descobri
 </details>
 
 ---
+
+<a name="contato"></a>
 
 ## 🤝 Como colaborar / entrar em contato
 
