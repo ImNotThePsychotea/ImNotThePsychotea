@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="370" viewBox="0 0 1000 370" role="img" aria-label="Prévia do terminal interativo v3ll0wn, preto e vermelho, com comandos de projetos e segurança">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#151118"/><stop offset="0.6" stop-color="#09090d"/><stop offset="1" stop-color="#200b17"/></linearGradient>
+ <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f93b68"/><stop offset="1" stop-color="#9e1b46"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="9"/></filter>
+ <style>
+ text{font-family:Consolas,'Courier New',monospace}
+ .soft{fill:#a8a2b1}.white{fill:#f0e9ed}.red{fill:#ff4a75}.green{fill:#56e7a8}
+ .cursor{animation:blink 1s steps(2,end) infinite}@keyframes blink{50%{opacity:0}}
+ @media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+ </style>
+</defs>
+<rect width="1000" height="370" rx="18" fill="#08080d"/>
+<rect x="6" y="6" width="988" height="358" rx="14" fill="url(#bg)" stroke="#623447" stroke-width="2"/>
+<rect x="8" y="8" width="984" height="47" rx="11" fill="#20202b"/>
+<rect x="8" y="45" width="984" height="11" fill="#20202b"/>
+<path d="M8 57H992" stroke="#624052" opacity=".7"/>
+<circle cx="34" cy="31" r="7" fill="#ff687d"/><circle cx="57" cy="31" r="7" fill="#f0bd61"/><circle cx="80" cy="31" r="7" fill="#42dc9f"/>
+<text x="500" y="36" text-anchor="middle" class="soft" font-size="16">v3ll0wn@localhost: ~ — terminal.exe</text>
+<text x="965" y="35" text-anchor="end" class="soft" font-size="11">v1.0</text>
+<rect x="30" y="86" width="200" height="3" rx="2" fill="url(#accent)"/>
+<text x="31" y="120" class="red" font-size="15" font-weight="700">[ BOOT COMPLETO ]</text>
+<text x="31" y="148" class="white" font-size="17">Bem-vindo ao terminal interativo de v3ll0wn.</text>
+<text x="31" y="174" class="soft" font-size="15">Digite <tspan fill="#61e4ab">help</tspan> para explorar os comandos.</text>
+<text x="31" y="221" class="green" font-size="17">guest@v3ll0wn:~$</text>
+<text x="219" y="221" class="white" font-size="17">projects</text>
+<text x="31" y="250" class="red" font-size="15">~/projects</text>
+<text x="31" y="279" class="green" font-size="15">├─ FlowWhats       SaaS + Automação</text>
+<text x="31" y="303" class="green" font-size="15">├─ Synergi AI      IA + Educação</text>
+<text x="31" y="327" class="green" font-size="15">└─ SynthLearn     Web + Aprendizado</text>
+<rect x="699" y="100" width="265" height="192" rx="9" fill="#130f18" stroke="#5c344b"/>
+<text x="722" y="132" class="red" font-size="13" font-weight="700">QUICK EXEC //</text>
+<g font-size="14" class="white">
+<rect x="719" y="148" width="108" height="39" rx="5" fill="#27202e" stroke="#64364c"/><text x="738" y="173">help</text>
+<rect x="837" y="148" width="108" height="39" rx="5" fill="#27202e" stroke="#64364c"/><text x="852" y="173">whoami</text>
+<rect x="719" y="195" width="108" height="39" rx="5" fill="#27202e" stroke="#64364c"/><text x="737" y="220">skills</text>
+<rect x="837" y="195" width="108" height="39" rx="5" fill="#27202e" stroke="#64364c"/><text x="849" y="220">security</text>
+</g>
+<text x="724" y="271" fill="#e77a99" font-size="12">CLIQUE PARA ACESSAR →</text>
+<path d="M19 344H978" stroke="#3b2b38"/>
+<text x="31" y="355" class="soft" font-size="9">SAFE SIMULATOR // NO DEVICE ACCESS</text>
+<rect class="cursor" x="272" y="207" width="11" height="18" fill="#f94b75"/>
+</svg>
