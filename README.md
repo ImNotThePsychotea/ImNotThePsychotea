@@ -43,6 +43,20 @@
 
 </div>
 
+<div align="center">
+
+### `>_ TERMINAL.EXE // INTERACTIVE MODE`
+
+<a href="https://v3ll0wn.github.io/v3ll0wn/">
+  <img width="95%" src="https://raw.githubusercontent.com/v3ll0wn/v3ll0wn/main/docs/terminal-preview.svg" alt="Abrir terminal interativo de v3ll0wn, com comandos reais, campo de entrada, histórico e autocomplete"/>
+</a>
+
+**[▶ INICIAR TERMINAL INTERATIVO](https://v3ll0wn.github.io/v3ll0wn/)** &nbsp;·&nbsp; [VER CÓDIGO-FONTE](https://github.com/v3ll0wn/v3ll0wn/blob/main/docs/index.html)
+
+<sub>Digite comandos, use TAB para autocomplete, ↑/↓ para histórico e descubra easter eggs. Executa apenas comandos seguros desta página.</sub>
+
+</div>
+
 <a name="inicio"></a>
 
 ## 👾 Sobre mim
@@ -75,7 +89,18 @@ Sou um estudante de **Desenvolvimento de Sistemas** que gosta de ir além de uma
 
 ## 🖥️ Terminal interativo
 
-**Clique nos comandos para abrir uma saída.** É uma interface feita com os recursos nativos do Markdown do GitHub, sem scripts escondidos ou funcionalidades falsas.
+### `[ SISTEMA ONLINE — ACESSO AO TERMINAL ]`
+
+Abaixo há uma prévia expansível para quem estiver lendo diretamente no GitHub. **Para digitar comandos de verdade no terminal, abra a interface externa:**
+
+**[🖥️ ACESSAR TERMINAL INTERATIVO](https://v3ll0wn.github.io/v3ll0wn/)**
+
+O terminal funcional tem campo para digitar comandos como `help`, `whoami`, `projects`, `skills`, `security`, `neofetch` e `open flowwhats`, além de histórico, autocomplete com Tab e temas `theme red` e `theme matrix`. É um simulador seguro, sem acesso ao dispositivo do visitante.
+
+<details>
+<summary><strong>📺 Modo README — exemplos de comandos (abrir/recolher)</strong></summary>
+
+
 
 <details open>
 <summary><strong>🟢 v3ll0wn@localhost:~$ whoami</strong> — identificar usuário</summary>
@@ -158,6 +183,8 @@ Access granted.
 | <code>sudo unlock</code> | Uma mensagem escondida |
 | <code>git log --oneline</code> | Evolução e roadmap abaixo |
 | <code>systemctl status github</code> | Estatísticas dinâmicas abaixo |
+
+</details>
 
 </details>
 
